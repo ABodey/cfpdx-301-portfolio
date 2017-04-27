@@ -16,6 +16,10 @@ article {
 
 /*TEXT STYLES
 =======================================*/
+html {
+  font-family: 'Abril Fatface', cursive, serif;
+}
+
 p {
   font-size: 1em;
 }
@@ -29,11 +33,11 @@ address {
 
 a, a:link, a:active {
   text-decoration: none;
-  color: #777;
+  color: #270462;
 }
 
 a:hover, a:focus {
-  color: #29506D;
+  color: #5610C9;
 }
 
 a:visited {
