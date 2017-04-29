@@ -1,8 +1,12 @@
 .site-header {
-  /*color: white;*/
   background: #2AD062;
   letter-spacing: 0.1em;
 
+}
+
+.tab-content img{
+  height: 17rem;
+  width: 20rem;
 }
 
 .heading-group-h1 {
@@ -59,7 +63,7 @@
   text-decoration: none;
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 40px) {
   .icon-menu {
     display: none;
   }
