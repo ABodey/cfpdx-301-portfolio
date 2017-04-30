@@ -1,24 +1,27 @@
-# Portfolio assignment for class 3
+# Your professional online presence
 
-Continue building and improving your portfolio site. Here's how you can leverage events:
+The portfolio site that you create will highlight your projects and your interests, and showcase your skills to potential employers or clients.
 
-Adapt these stories as necessary to fit how you want to build your portfolio.
+You will create, from scratch, a static portfolio site (no "backend server" code required), to represent your personal online presence.
 
-## User Stories: MVP
-  1. As the creator, I want the Home and About nav links to act as tabs, so my story is revealed FAST.
-    - This means your links to NOT navigate to a new page.
-    - Instead, your "single page app" shows only the section related to the navigation tab that is selected.
-    - You can use 'data-' attributes to associate a content section with a particular tab
-    - Then use jQuery so when the tab is clicked, you hide all the sections, then reveal the associated section only.
-  1. As a reader, I want the portfolio to use a nice color scheme, so that it stands out visually.
 
-## Stretch Goals (not required):
-  1. As a reader, I want project descriptions truncated to the first paragraph so that I can easily scroll though the whole list.
-  1. As a reader, I want to click the "More" button so that I can expand the entire description.
-  1. As a reader, I want projects filterable by category so that I can review just the things that interest me.
+## User Stories: Minimum Viable Product (MVP)
+Let these user stories guide your development:
+ 1. As a developer, I want my site to use valid and semantic markup, so that employers will love me.
+ - As the creator, I want the page to link to my social and GitHub pages, so that visitors can follow me, and I can build my audience.
+ - As a developer, I want portfolio items displayed with a repeatable template, so that I can reuse it, and abstract out the details for individual projects.
+ - As a developer, I want my CSS organized (think SMACSS) so that I can find my stylings swiftly.
+
+## User Stories: Stretch Goals
+- As a visitor, I want the portfolio to show the newest material on top so that I can easily see the developers recent work.
+- As a visitor, I want relative timestamps on such material to give me a idea of how many days ago something was created.
+
 
 ## Technical Requirements and Grading Rubric
-  - Use event delegation whenever appropriate.
-  - Add click handlers to at leat one nav section.
-  - Do as much work as you can with advanced selectors, rather than littering your markup with classes and ids.
-  - When classes and IDs are needed, pick semantic names. There is to be no `$('#content .content')` nonsense!
+  - Think of some ideas for your source data, and code it up in its **own file**! Build out an array of three objects to   start with, all having similar properties.
+  - Create a new .js file with the appropriate methods to help modify your source data to help render it to the DOM:
+  - Use good Object Oriented code: Create a constructor function for projects or source data.
+  - Leave as little in the `window` (global) namespace as possible: attach functions to objects, etc.
+  - Use jQuery to `clone` the example markup for each project, as you add additional content.
+  - Your "Project" prototype should have a `.toHtml()` function that adds new data to the DOM.
+  - Refactor your CSS into a base, layout, and module structure where applicable.
