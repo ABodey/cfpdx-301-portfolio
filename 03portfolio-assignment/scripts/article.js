@@ -22,7 +22,7 @@ $newArticle.find('h1').html(this.title);
 $newArticle.find('a').html(this.author);
 $newArticle.find('.byline a').attr('href', this.authorUrl);
 $newArticle.find('.article-body').html(this.body);
-$newArticle.find('.article-body').html(this.picture);
+$newArticle.find('.article-picture').html(this.picture);
 $newArticle.find('time').html(this.publishedOn);
 
   return $newArticle;
