@@ -1,7 +1,9 @@
-//  REVIEW: Configure a view object, to hold all our functions for dynamic updates and article-related event handlers.
+'use strict';
+
+// create object for all of the functions that control what blog articles you see
 var blogview = {};
 
-
+// Populate filters with the authors and categories from the blogsource
 blogview.populateFilters = function() {
   $('article').not('.template').each(function() {
     var authorName, category, optionTag;
@@ -17,31 +19,22 @@ blogview.populateFilters = function() {
   });
 };
 
+// changes the articles shown by selection of author
 blogview.handleAuthorFilter = function() {
   $('#author-filter').on('change', function() {
     var selection = $(this).val();
     if (selection) {
-      /* TODO: If the select box changes to an option that has a value, we should:
-          1. Hide all of the articles
-          2. Fade in only the articles that match based on on the author
-            that was aselected. Hint: use an attribute selector to find
-            those articles that match the value, and then fade them in.
-        */
       $('article').hide();
       $('article[data-author="' + selection + '"]').fadeIn(800);
     } else {
-    /* Otherwise, we should:
-        1. Show all the articles except the template */
       $('article').not('.template').show();
     }
     $('#category-filter').val('');
   });
 };
 
+// changes the articles shown by selection of category
 blogview.handleCategoryFilter = function() {
-  /* TODO: Just like we do for #author-filter above, we should also handle
-  change events on the #category-filter element. Be sure to reset the
-  #author-filter while you're at it! */
   $('#category-filter').on('change', function () {
     var selection = $(this).val();
     if (selection) {
@@ -54,6 +47,7 @@ blogview.handleCategoryFilter = function() {
   })
 };
 
+// changes the class so you only see the table content you choose base on main nav
 blogview.handleMainNav = function () {
   $('.main-nav').on('click', '.tab', function() {
     $('.tab-content').hide();
@@ -75,6 +69,7 @@ blogview.handleMainNav = function () {
   $('.main-nav .tab:first').click();
 };
 
+//only shows the first <p> of each article untill you hit a button
 blogview.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('.read-on').click(function() {
@@ -89,6 +84,7 @@ blogview.setTeasers = function() {
   });
 }
 
+//envoke all the functions in the object
 blogview.populateFilters();
 blogview.handleAuthorFilter();
 blogview.handleCategoryFilter();

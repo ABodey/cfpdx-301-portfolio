@@ -1,4 +1,6 @@
 'use strict';
+
+//array of article objects with notation and text
 var sourceData = [
   {
     title:       '1967 Cadillac CoupeDeVille',

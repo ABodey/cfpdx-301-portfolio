@@ -1,7 +1,9 @@
 'use strict';
 
+//create aticle object to hold all functions for the form
 var articles = [];
 
+//get all the data from blogsource
 function Article (sourceArt) {
   this.title = sourceArt.title;
   this.category = sourceArt.category;
@@ -12,6 +14,7 @@ function Article (sourceArt) {
 
 };
 
+//set the data to locations on index using JQ
 Article.prototype.toHtml = function() {
   var $newArticle = $('article.template').clone();
   $newArticle.removeClass('template');
@@ -30,15 +33,18 @@ Article.prototype.toHtml = function() {
   return $newArticle;
 };
 
+//sort by date
 sourceData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
+//apply the funtions to each sourceArt
 sourceData.forEach(function(articleObject) {
   console.log("sourceData");
   articles.push(new Article(articleObject));
 });
 
+//append them to the html
 articles.forEach(function(a) {
   $('#articles').append(a.toHtml());
 });
