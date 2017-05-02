@@ -10,15 +10,15 @@ var sourceData = [
   },
   {
     title:       'Fit Squirrels',
-    category:    'tech',
+    category:    'Tech',
     author:      '101 team',
     authorUrl:   'https://abodey.github.io/index.html',
     publishedOn: '1-4-2017',
-    body:        '<p>From a suggestion from my brother I decided to try learning code. My first class was at Code Fellows PDX, Code 101. Here is a description from thier site:</p><p>At Code Fellows, we believe in starting with the right foundation. Our 100-level courses introduce coding beginners to the world of software development, from basic HTML and CSS to the many career paths available for developers.<p></p>All classes in the 100 level are beginner-friendly, with every student starting at the same point—no prerequisites or previous experience required. If you’re exploring the potential of a career in tech, preparing for our Code 201 course, or just need a basic understanding of web development, we&#39ve got you covered.</p><img src="http://images1.fanpop.com/images/image_uploads/Fat-Squirrel-squirrels-855818_500_542.jpg" alt="fat Squirrels"> '
+    body:        '<p>From a suggestion from my brother I decided to try learning code. My first class was at Code Fellows PDX, Code 101. Here is a description from thier site:</p><p>At Code Fellows, we believe in starting with the right foundation. Our 100-level courses introduce coding beginners to the world of software development, from basic HTML and CSS to the many career paths available for developers.</p><p>All classes in the 100 level are beginner-friendly, with every student starting at the same point—no prerequisites or previous experience required. If you’re exploring the potential of a career in tech, preparing for our Code 201 course, or just need a basic understanding of web development, we&#39ve got you covered.</p><img src="http://images1.fanpop.com/images/image_uploads/Fat-Squirrel-squirrels-855818_500_542.jpg" alt="fat Squirrels"> '
   },
   {
     title:       'Vote Tracker',
-    category:    'tech',
+    category:    'Tech',
     author:      'Andrew B',
     authorUrl:   'https://abodey.github.io/vote_tracker/',
     publishedOn: '3-4-2017',

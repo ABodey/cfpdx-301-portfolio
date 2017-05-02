@@ -9,6 +9,7 @@ blogview.populateFilters = function() {
     optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
     $('#author-filter').append(optionTag);
     category = $(this).attr('data-category');
+    console.log("cat"+ $(this).attr('data-category'));
     optionTag = '<option value="' + category + '">' + category + '</option>';
     if ($('#category-filter option[value="' + category + '"]').length === 0) {
       $('#category-filter').append(optionTag);

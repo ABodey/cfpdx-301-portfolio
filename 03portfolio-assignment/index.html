@@ -33,12 +33,18 @@
   </header>
   <main>
     <section id="articles" class="tab-content">
+      <div>
+        <ul id="filters">
+            <li><select id="author-filter"><option value="">-- Select By Author --</option></select></li>
+            <li><select id="category-filter"><option value="">-- Select By Category --</option></select></li>
+        </ul>
+      </div>
       <article class="template" data-category="placeholder-category">
         <header>
           <h1>Title</h1>
           <div class="byline">
             By <address><a href="#" target="_blank">Author Name</a></address>
-            published <time pubdate datetime="2000-01-01">Publish Time</time>
+            Publish Date <time pubdate datetime="2000-01-01">Publish Time</time>
           </div>
         </header>
         <section class="article-body"></section>
