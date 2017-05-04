@@ -20,7 +20,6 @@ Article.prototype.toHtml = function() {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `,   ${this.daysAgo} days ago` : '(draft)';
   $('#articles').append(myCompile(this));
-console.log("handlebars");
 };
 
 
@@ -31,7 +30,6 @@ sourceData.sort(function(a,b) {
 
 //apply the funtions to each sourceArt
 sourceData.forEach(function(articleObject) {
-  console.log("sourceData");
   articles.push(new Article(articleObject));
 });
 
