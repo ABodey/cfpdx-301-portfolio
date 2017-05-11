@@ -1,7 +1,7 @@
 'use strict';
 
 // create object for all of the functions that control what blog articles you see
-var blogview = {};
+const blogview = {};
 
 // Populate filters with the authors and categories from the blogsource
 blogview.populateFilters = function() {
@@ -72,9 +72,22 @@ blogview.setTeasers = function() {
   });
 }
 
+
+
+
+
+
+
+
+
+blogview.initIndexPage = function() {
+  Article.all.forEach(function(a) {
+    $('#articles').append(a.toHtml())
+  });
 //envoke all the functions in the object
 blogview.populateFilters();
 blogview.handleAuthorFilter();
 blogview.handleCategoryFilter();
 blogview.handleMainNav();
 blogview.setTeasers();
+};

@@ -1,7 +1,5 @@
 'use strict';
 
-//create aticle object to hold all functions for the form
-var articles = [];
 
 //get all the data from blogsource
 function Article (sourceArt) {
@@ -14,6 +12,9 @@ function Article (sourceArt) {
 
 };
 
+//create array in the object to hold all functions for the form
+Article.all = [];
+
 //set the data to locations on index using handlebars and JQ
 Article.prototype.toHtml = function() {
   var myCompile = Handlebars.compile($('#template').html());
@@ -22,18 +23,32 @@ Article.prototype.toHtml = function() {
   return myCompile(this);
 };
 
-
+Article.loadAll = function (sourceData){
 //sort by date
 sourceData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
+
 //apply the funtions to each sourceArt
 sourceData.forEach(function(articleObject) {
-  articles.push(new Article(articleObject));
+  Article.all.push(new Article(articleObject));
 });
+}
 
-//append them to the html
-articles.forEach(function(a) {
-  $('#articles').append(a.toHtml());
-});
+Article.fetchAll = function () {
+  if (localStorage.sourceData) {
+    Article.loadAll(JSON.parse(localStorage.sourceData));
+    // blogView.initIndexPage();
+
+} else {
+  $.getJSON('data/blogSource.json', function (json){
+    console.log('JSON data: ', json);
+    localStorage.setItem('sourceData', JSON.stringify(json));
+  });
+  // blogView.initIndexPage();
+}
+  blogview.initIndexPage();
+
+}
+
