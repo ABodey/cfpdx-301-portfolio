@@ -14,24 +14,14 @@ function Article (sourceArt) {
 
 };
 
-//set the data to locations on index using JQ
+//set the data to locations on index using handlebars and JQ
 Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
-  $newArticle.removeClass('template');
-
-  if (!this.publishedOn) $newArticle.addClass('draft');
-  $newArticle.attr('data-category', this.category);
-
-  $newArticle.find('h1').html(this.title);
-  $newArticle.find('a').html(this.author);
-  $newArticle.find('.byline a').attr('href', this.authorUrl);
-  $newArticle.find('.article-body').html(this.body);
-  $newArticle.find('.article-picture').html(this.picture);
-  $newArticle.find('time').text(this.publishedOn+'  ('+'about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago'+')');
-
-
-  return $newArticle;
+  var myCompile = Handlebars.compile($('#template').html());
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus = this.publishedOn ? `,   ${this.daysAgo} days ago` : '(draft)';
+  $('#articles').append(myCompile(this));
 };
+
 
 //sort by date
 sourceData.sort(function(a,b) {
@@ -40,7 +30,6 @@ sourceData.sort(function(a,b) {
 
 //apply the funtions to each sourceArt
 sourceData.forEach(function(articleObject) {
-  console.log("sourceData");
   articles.push(new Article(articleObject));
 });
 

@@ -4,12 +4,28 @@
   <meta charset="utf-8">
   <title>Super Portfolio Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Inknut+Antiqua|Merriweather" rel="stylesheet">
   <link rel="stylesheet" href="vendor/styles/normalize.css">
   <link rel="stylesheet" href="vendor/icons.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
+  <script id="template" type="text/x-handlebars-template">
+<article  data-author="{{ author }}" data-category="{{ category }}">
+
+  <header>
+    <h1>{{title}}</h1>
+    <div class="byline">
+      By <address><a href="{{ authorUrl }}">{{ author }}</a></address>
+       Publish Date {{ publishedOn }}<time pubdate datetime="{{ publishedOn }}">{{ publishStatus }}</time>
+    </div>
+  </header>
+<section class="article-body">{{{body}}}</section>
+<div class="article-picture"></div>
+<button class="read-on" type="button" name="read-on">Keep Reading</button>
+</article>
+</script>
+
 </head>
 <header class="site-header clearfix">
   <section class="heading-group-h1">
@@ -33,7 +49,7 @@
   </header>
   <main>
     <section id="articles" class="tab-content">
-      <div>
+      <!-- <div>
         <ul id="filters">
             <li><select id="author-filter"><option value="">-- Select By Author --</option></select></li>
             <li><select id="category-filter"><option value="">-- Select By Category --</option></select></li>
@@ -50,7 +66,7 @@
         <section class="article-body"></section>
         <div class="article-picture"></div>
         <button class="read-on" type="button" name="read-on">Keep Reading</button>
-      </article>
+      </article> -->
     </section>
     <section id="about" class="tab-content">
       <header>
@@ -87,6 +103,7 @@
   <footer>
     &copy; 2017 ABodey | Portfolio &amp; Blog | Thanks for checking it out !
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="scripts/blogSource.js"></script>
   <script src="scripts/article.js"></script>

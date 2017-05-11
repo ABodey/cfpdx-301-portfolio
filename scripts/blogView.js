@@ -11,7 +11,7 @@ blogview.populateFilters = function() {
     optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
     $('#author-filter').append(optionTag);
     category = $(this).attr('data-category');
-    console.log("cat"+ $(this).attr('data-category'));
+    // console.log("cat"+ $(this).attr('data-category'));
     optionTag = '<option value="' + category + '">' + category + '</option>';
     if ($('#category-filter option[value="' + category + '"]').length === 0) {
       $('#category-filter').append(optionTag);
@@ -52,19 +52,7 @@ blogview.handleMainNav = function () {
   $('.main-nav').on('click', '.tab', function() {
     $('.tab-content').hide();
     var selection = $(this).attr('data-content');
-    if (selection === 'articles') {
-      $('#articles').show();
-      $('#about').hide();
-      $('#contact').hide();
-    } else if (selection === 'about') {
-      $('#articles').hide();
-      $('#about').show();
-      $('#contact').hide();
-    } else if (selection === 'contact') {
-      $('#articles').hide();
-      $('#about').hide();
-      $('#contact').show();
-    }
+    $('#' + selection ).show();
   });
   $('.main-nav .tab:first').click();
 };
