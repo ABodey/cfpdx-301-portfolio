@@ -19,7 +19,7 @@ Article.prototype.toHtml = function() {
   var myCompile = Handlebars.compile($('#template').html());
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `,   ${this.daysAgo} days ago` : '(draft)';
-  $('#articles').append(myCompile(this));
+  return myCompile(this);
 };
 
 

@@ -1,8 +1,11 @@
-.site-header {
+.site-header, footer {
   background: #2AD062;
-  letter-spacing: 0.1em;
-
 }
+
+.site-header {
+  letter-spacing: 0.1em;
+}
+
 
 .tab-content img{
   height: 17rem;
