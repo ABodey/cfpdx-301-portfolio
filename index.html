@@ -24,9 +24,9 @@
         </div>
       </header>
       <div>
-      <section class="article-body">{{{ body }}}</section>
-      <div class="article-picture"></div>
-      <button class="read-on" type="button" name="read-on">Keep Reading</button>
+        <section class="article-body">{{{ body }}}</section>
+        <div class="article-picture"></div>
+        <button class="read-on" type="button" name="read-on">Keep Reading</button>
       </div>
     </article>
   </script>
@@ -98,11 +98,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
   <script src="scripts/article.js"></script>
   <script src="scripts/blogView.js"></script>
-      <script>
-        //call data to the page
-      Article.fetchAll(); 
-
-    </script>
+  <script>
+    //call data to the page
+    Article.checkETag();
+  </script>
 
 
 </body>
