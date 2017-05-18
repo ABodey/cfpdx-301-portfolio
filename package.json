@@ -1,0 +1,24 @@
+{
+  "name": "cfpdx-301-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio for code works",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABodey/cfpdx-301-portfolio.git"
+  },
+  "author": "Andrew Bodey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ABodey/cfpdx-301-portfolio/issues"
+  },
+  "homepage": "https://github.com/ABodey/cfpdx-301-portfolio#readme"
+}
