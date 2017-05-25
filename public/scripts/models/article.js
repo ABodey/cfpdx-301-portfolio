@@ -1,5 +1,6 @@
 'use strict';
 
+(function (module) {
 
 //get all the data from blogsource
 function Article(sourceArt) {
@@ -78,3 +79,6 @@ Article.fetchAll = function () {
   blogview.initIndexPage();
 
 }
+
+  module.Article = Article;
+})(window);

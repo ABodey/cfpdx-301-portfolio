@@ -1,5 +1,7 @@
 'use strict';
 
+(function (module) {
+
 // create object for all of the functions that control what blog articles you see
 const blogview = {};
 
@@ -83,3 +85,6 @@ blogview.initIndexPage = function () {
   blogview.handleMainNav();
   blogview.setTeasers();
 };
+
+  module.blogview = blogview;
+})(window);
