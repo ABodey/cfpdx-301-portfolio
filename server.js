@@ -12,3 +12,7 @@ app.use(express.static('./public'));
 app.listen(PORT, function(){
     console.log(`listening on the port: ${PORT}`);
 });
+
+app.get('/', (request, response) => response.sendFile('index.html', {root: '.'}));
+
+// app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));

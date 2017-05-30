@@ -49,16 +49,6 @@ blogview.handleCategoryFilter = function () {
   })
 };
 
-// changes the class so you only see the table content you choose base on main nav
-blogview.handleMainNav = function () {
-  $('.main-nav').on('click', '.tab', function () {
-    $('.tab-content').hide();
-    var selection = $(this).attr('data-content');
-    $('#' + selection).show();
-  });
-  $('.main-nav .tab:first').click();
-};
-
 //only shows the first <p> of each article untill you hit a button
 blogview.setTeasers = function () {
   $('.article-body *:nth-of-type(n+2)').hide();
@@ -82,7 +72,6 @@ blogview.initIndexPage = function () {
   blogview.populateFilters();
   blogview.handleAuthorFilter();
   blogview.handleCategoryFilter();
-  blogview.handleMainNav();
   blogview.setTeasers();
 };
 
